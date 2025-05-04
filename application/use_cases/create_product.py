@@ -1,3 +1,5 @@
+from fastapi import HTTPException
+
 from domain.entities.product import Product
 from domain.repositories.product_repository import ProductRepository
 from uuid import uuid4
@@ -8,6 +10,11 @@ class CreateProductUseCase:
 
     def execute(self, name: str, rate: float, min_amount: float, max_amount: float,
                 min_term: int, max_term: int, color: str) -> Product:
+
+        existing = self.repository.find_by_name(name)
+        if existing:
+            raise HTTPException(status_code=422, detail="Ya existe un producto con ese nombre")
+
         product = Product(
             id=str(uuid4()),
             name=name,

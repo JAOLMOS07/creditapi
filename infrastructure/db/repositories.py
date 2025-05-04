@@ -1,3 +1,5 @@
+from typing import Optional
+
 from domain.repositories.product_repository import ProductRepository
 from domain.entities.product import Product
 from sqlalchemy.orm import Session
@@ -51,3 +53,7 @@ class SQLAlchemyProductRepository(ProductRepository):
             max_term=model.max_term,
             color=model.color,
         )
+
+    def find_by_name(self, name: str) -> Optional[Product]:
+        model = self.db.query(ProductModel).filter_by(name=name).first()
+        return self._to_domain(model) if model else None

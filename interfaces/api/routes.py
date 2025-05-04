@@ -19,7 +19,8 @@ router = APIRouter()
     response_model=ProductResponse,
     summary="Crear un nuevo producto",
     description="Crea un nuevo producto financiero con nombre, tasa de interés, montos y plazos válidos.",
-    status_code=201
+    status_code=201,
+    responses={422: {"description": "Errores de validación"}}
 )
 def create(product: ProductCreate, db: Session = Depends(get_db)):
     repo = SQLAlchemyProductRepository(db)

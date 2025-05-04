@@ -24,3 +24,7 @@ class ProductRepository(ABC):
     @abstractmethod
     def delete(self, product_id: str) -> None:
         pass
+
+    @abstractmethod
+    def find_by_name(self, name: str) -> Optional[Product]:
+        pass
