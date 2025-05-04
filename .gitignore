@@ -1,0 +1,87 @@
+# Entorno virtual  
+.env/
+.venv/  
+venv/  
+ENV.bak/  
+venv.bak/  
+  
+# Archivos y directorios de Python  
+__pycache__/  
+*.py[cod]  
+*$py.class  
+  
+# Archivos de configuración del entorno  
+*.env  
+.env.*  
+  
+# Archivos de configuración del editor  
+.vscode/  
+.idea/  
+*.swp  
+*.swo  
+  
+# Archivos de logs  
+*.log  
+  
+# Archivos de base de datos local  
+*.sqlite3  
+  
+# Archivos de configuracion de Uvicorn  
+*.pid  
+  
+# Directorios y archivos de tests y cobertura  
+htmlcov/  
+.tox/  
+.nox/  
+.coverage  
+.coverage.*  
+.cache  
+nosetests.xml  
+coverage.xml  
+*.cover  
+*.py,cover  
+.hypothesis/  
+.pytest_cache/  
+test-results/  
+  
+# Distribucion y empaquetado  
+*.egg-info/  
+.installed.cfg  
+*.egg  
+dist/  
+build/  
+eggs/  
+parts/  
+var/  
+sdist/  
+develop-eggs/  
+  
+# Archivos de wheel  
+*.whl  
+  
+# Archivos de notebooks  
+.ipynb_checkpoints  
+  
+# Archivos de pip  
+pip-log.txt  
+pip-delete-this-directory.txt  
+  
+# Archivos de mypy  
+.mypy_cache/  
+.dmypy.json  
+dmypy.json  
+  
+# Archivos de cobertura de codecov  
+codecov.yml  
+  
+# Archivos de perfiles de seguridad  
+.security/  
+  
+# Archivos de perfil de rendimiento  
+speedup.log  
+node_modules/.package-lock.json
+notas.txt
+backup_completo.sql
+contenidoproyecto.ps1
+contenidoproyecto.txt
+db_structure_and_data.txt
