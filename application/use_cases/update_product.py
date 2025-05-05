@@ -7,7 +7,8 @@ class UpdateProductUseCase:
         self.repository = repository
 
     def execute(self, product: Product):
-        existing = self.repository.get(product.id)
-        if not existing:
-            raise HTTPException(status_code=404, detail="Producto no encontrado")
+        existing = self.repository.find_by_name(product.name)
+        if existing:
+            if existing.id != product.id:
+                raise HTTPException(status_code=422, detail="Ya existe un producto con ese nombre")
         return self.repository.update(product)

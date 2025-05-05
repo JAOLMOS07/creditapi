@@ -32,20 +32,10 @@ class ProductUpdate(BaseModel):
 
     @model_validator(mode="after")
     def validate_ranges(self) -> "ProductUpdate":
-        if (
-            self.min_amount is not None and
-            self.max_amount is not None and
-            self.min_amount > self.max_amount
-        ):
+        if self.min_amount > self.max_amount:
             raise ValueError("min_amount no puede ser mayor que max_amount")
-
-        if (
-            self.min_term is not None and
-            self.max_term is not None and
-            self.min_term > self.max_term
-        ):
+        if self.min_term > self.max_term:
             raise ValueError("min_term no puede ser mayor que max_term")
-
         return self
 
 
